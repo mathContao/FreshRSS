@@ -11,7 +11,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">
-        <a href="{{ site.github.url }}">{{ site.title | default: site.github.repository_name }}</a>
+        <a href="{{ site.github.url }}"><img src="{{ site.title.logo }}" title="{{ site.title | default: site.github.repository_name }}" style="max-width: 350px;filter: grayscale(75%) brightness(200%);" /></a>
       </h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
