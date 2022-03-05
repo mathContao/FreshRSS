@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 title: FreshRSS
 description: Documentation center
 
-logo: /img/FreshRSS-logo.png
+logo: /img/FreshRSS-logo.svg
 show_downloads: true
 
 include: contributing.md
