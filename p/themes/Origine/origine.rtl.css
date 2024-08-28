@@ -612,6 +612,7 @@ a:hover .icon {
 .aside_feed .tree-folder-title button.dropdown-toggle {
 	margin: -0.75rem -0.75rem -0.75rem 0.25rem;
 	padding: 0.75rem 0.75rem 0.75rem 0;
+	background: transparent;
 }
 
 .aside_feed .tree-folder-title:hover button.dropdown-toggle .icon {
