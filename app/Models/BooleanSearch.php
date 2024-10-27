@@ -31,12 +31,15 @@ class FreshRSS_BooleanSearch {
 			if (!is_string($input)) {
 				return;
 			}
+		}
+		$this->raw_input = $input;
 
+		if ($level === 0) {
+			$input = self::escapeRegexParentheses($input);
 			$input = $this->parseUserQueryNames($input, $allowUserQueries);
 			$input = $this->parseUserQueryIds($input, $allowUserQueries);
 			$input = trim($input);
 		}
-		$this->raw_input = $input;
 
 		$input = self::consistentOrParentheses($input);
 
@@ -58,11 +61,11 @@ class FreshRSS_BooleanSearch {
 		}
 
 		if (!empty($all_matches)) {
-			/** @var array<string,FreshRSS_UserQuery> */
 			$queries = [];
 			foreach (FreshRSS_Context::userConf()->queries as $raw_query) {
-				$query = new FreshRSS_UserQuery($raw_query, FreshRSS_Context::categories(), FreshRSS_Context::labels());
-				$queries[$query->getName()] = $query;
+				if (($raw_query['name'] ?? '') !== '' && ($raw_query['search'] ?? '') !== '') {
+					$queries[$raw_query['name']] = trim($raw_query['search']);
+				}
 			}
 
 			$fromS = [];
@@ -76,7 +79,7 @@ class FreshRSS_BooleanSearch {
 					if (!empty($queries[$name])) {
 						$fromS[] = $matches[0][$i];
 						if ($allowUserQueries) {
-							$toS[] = '(' . trim($queries[$name]->getSearch()->getRawInput()) . ')';
+							$toS[] = '(' . $queries[$name] . ')';
 						} else {
 							$toS[] = '';
 						}
@@ -100,11 +103,9 @@ class FreshRSS_BooleanSearch {
 		}
 
 		if (!empty($all_matches)) {
-			/** @var array<string,FreshRSS_UserQuery> */
 			$queries = [];
 			foreach (FreshRSS_Context::userConf()->queries as $raw_query) {
-				$query = new FreshRSS_UserQuery($raw_query, FreshRSS_Context::categories(), FreshRSS_Context::labels());
-				$queries[] = $query;
+				$queries[] = trim($raw_query['search'] ?? '');
 			}
 
 			$fromS = [];
@@ -119,7 +120,7 @@ class FreshRSS_BooleanSearch {
 					if (!empty($queries[$id])) {
 						$fromS[] = $matches[0][$i];
 						if ($allowUserQueries) {
-							$toS[] = '(' . trim($queries[$id]->getSearch()->getRawInput()) . ')';
+							$toS[] = '(' . $queries[$id] . ')';
 						} else {
 							$toS[] = '';
 						}
@@ -130,6 +131,20 @@ class FreshRSS_BooleanSearch {
 			$input = str_replace($fromS, $toS, $input);
 		}
 		return $input;
+	}
+
+	/**
+	 * Temporarily escape parentheses used in regex expressions.
+	 */
+	public static function escapeRegexParentheses(string $input): string {
+		return preg_replace_callback('#(?<=[\\s(:!-]|^)(?<![\\\\])/.*?(?<!\\\\)/[im]*#',
+			fn(array $matches): string => str_replace(['(', ')'], ['\\u0028', '\\u0029'], $matches[0]),
+			$input
+		) ?? '';
+	}
+
+	public static function unescapeRegexParentheses(string $input): string {
+		return str_replace(['\\u0028', '\\u0029'], ['(', ')'], $input);
 	}
 
 	/**
