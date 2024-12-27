@@ -24,6 +24,24 @@
 	<h2><?= _t('index.about.bugs_reports') ?></h2>
 	<?= _t('index.about.github') ?>
 
+	<?php if (FreshRSS_Auth::hasAccess('admin')) { ?>
+		<details class="envInfo">
+			<summary><?= _t('index.about.bug_reports.environment_information') ?></summary>
+			<dl>
+				<dt><?= _t('index.about.bug_reports.environment_information.version_frss') ?></dt>
+				<dd><?= FRESHRSS_VERSION ?></dd>
+				<dt><?= _t('index.about.bug_reports.environment_information.version_php') ?></dt>
+				<dd><?= PHP_VERSION ?></dd>
+				<dt><?= _t('index.about.bug_reports.environment_information.database') ?></dt>
+				<dd><?= FreshRSS_Context::systemConf()->db['type'] ?></dd>
+				<dt><?= _t('index.about.bug_reports.environment_information.server_software') ?></dt>
+				<dd><?= $_SERVER['SERVER_SOFTWARE'] ?></dd>
+				<dt><?= _t('index.about.bug_reports.environment_information.browser') ?></dt>
+				<dd><?= $_SERVER['HTTP_USER_AGENT'] ?></dd>
+			</dl>
+		</details>
+	<?php } ?>
+
 	<h2><?= _t('index.about.license') ?></h2>
 	<?= _t('index.about.agpl3') ?>
 
