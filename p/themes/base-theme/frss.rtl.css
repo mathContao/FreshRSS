@@ -2378,7 +2378,12 @@ html.slider-active {
 	border: 1px solid var(--frss-border-color);
 }
 
+.envInfo dt::after {
+	content: ":";
+}
+
 .envInfo dd {
+	margin-bottom: 0.5rem;
 	padding-right: 2rem;
 	font-family: monospace;
 }
