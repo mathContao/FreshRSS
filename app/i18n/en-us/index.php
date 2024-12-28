@@ -16,12 +16,12 @@ return array(
 		'agpl3' => '<a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL 3</a>',	// IGNORE
 		'bug_reports' => array(
 			'environment_information' => array(
-				'_' => 'Environment information',	// TODO
-				'browser' => 'Browser',	// TODO
-				'database' => 'Database',	// TODO
-				'server_software' => 'Server software',	// TODO
-				'version_frss' => 'FreshRSS version',	// TODO
-				'version_php' => 'PHP version',	// TODO
+				'_' => 'Environment information',	// IGNORE
+				'browser' => 'Browser',	// IGNORE
+				'database' => 'Database',	// IGNORE
+				'server_software' => 'Server software',	// IGNORE
+				'version_frss' => 'FreshRSS version',	// IGNORE
+				'version_php' => 'PHP version',	// IGNORE
 			),
 		),
 		'bugs_reports' => 'Bug reports',	// IGNORE
