@@ -16,7 +16,7 @@ return array(
 		'agpl3' => '<a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL 3</a>',	// TODO
 		'bug_reports' => array(
 			'environment_information' => array(
-				'_' => 'Environment information',	// TODO
+				'_' => 'System information',	// TODO
 				'browser' => 'Browser',	// TODO
 				'database' => 'Database',	// TODO
 				'server_software' => 'Server software',	// TODO
