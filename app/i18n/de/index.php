@@ -16,7 +16,7 @@ return array(
 		'agpl3' => '<a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL 3</a>',	// IGNORE
 		'bug_reports' => array(
 			'environment_information' => array(
-				'_' => 'Informationen über die Systemumgebung',
+				'_' => 'Systemumgebung',
 				'browser' => 'Browser',	// IGNORE
 				'database' => 'Datenbank',
 				'server_software' => 'Serversoftware',
