@@ -130,7 +130,7 @@ input, select, textarea {
 	border-radius: 6px;
 	background-color: transparent;
 	min-height: 25px;
-	line-height: 25px;
+	line-height: 1;
 	vertical-align: middle;
 }
 
@@ -206,7 +206,7 @@ table th, table td {
 /*=== Buttons */
 .btn {
 	margin: .3rem 0 0.3rem .6rem;
-	padding: 5px 10px;
+	padding: 0.25rem 0.5rem;
 	background: var(--accent-bg);
 	color: var(--accent);
 	font-size: 0.9rem;
@@ -976,7 +976,6 @@ li.item.active {
 	text-align: center;
 }
 
-.header .configure .btn.dropdown-toggle,
 .nav_menu .btn {
 	margin: .125rem;
 }
