@@ -28,6 +28,8 @@
 				<dd><?= PHP_VERSION ?></dd>
 				<dt><?= _t('index.about.bug_reports.environment_information.database') ?></dt>
 				<dd><?= FreshRSS_Context::systemConf()->db['type'] ?></dd>
+				<?php $databaseDAO = FreshRSS_Factory::createDatabaseDAO(); ?>
+				<dd><?= $databaseDAO->version() ?></dd>
 				<dt><?= _t('index.about.bug_reports.environment_information.server_software') ?></dt>
 				<dd>
 					<?= is_string($_SERVER['SERVER_SOFTWARE'] ?? null) ? $_SERVER['SERVER_SOFTWARE'] : '' ?><br />
