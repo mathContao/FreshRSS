@@ -14,13 +14,15 @@ return array(
 	'action' => array(
 		'actualize' => 'フィードを更新する',
 		'add' => '追加',
-		'back' => '← 戻る',
 		'back_to_rss_feeds' => '← RSSフィードに戻る',
 		'cancel' => 'キャンセル',
 		'create' => '作成',
+		'delete_all_feeds' => 'すべてのフィードを削除する',
+		'delete_errored_feeds' => 'エラーのフィードを削除する',
 		'delete_muted_feeds' => 'ミュートにしているフィードを削除する',
 		'demote' => '寄付',
 		'disable' => '無効',
+		'download' => 'ダウンロード',
 		'empty' => '空',
 		'enable' => '有効',
 		'export' => 'エクスポート',
@@ -29,10 +31,13 @@ return array(
 		'load_default_shortcuts' => 'デフォルトのショートカットを読み込む',
 		'manage' => '管理',
 		'mark_read' => '既読にする',
+		'menu' => array(
+			'open' => 'メニューを開く',
+		),
 		'nav_buttons' => array(
-			'next' => 'Next article',	// TODO
-			'prev' => 'Previous article',	// TODO
-			'up' => 'Go up',	// TODO
+			'next' => '次の記事',
+			'prev' => '前の記事',
+			'up' => '先頭へ',
 		),
 		'open_url' => 'URLを開く',
 		'promote' => 'プロモート',
@@ -40,7 +45,7 @@ return array(
 		'refresh_opml' => 'OPMLをリフレッシュする',
 		'remove' => '消去',
 		'rename' => '名前を変更する',
-		'see_website' => 'webサイトをご覧ください',
+		'see_website' => 'Webサイトを開く',
 		'submit' => '保存',
 		'truncate' => 'すべての記事を消去する',
 		'update' => '更新',
@@ -151,6 +156,7 @@ return array(
 		'en-us' => 'English (United States)',	// IGNORE
 		'es' => 'Español',	// IGNORE
 		'fa' => 'فارسی',	// IGNORE
+		'fi' => 'Suomi',	// IGNORE
 		'fr' => 'Français',	// IGNORE
 		'he' => 'עברית',	// IGNORE
 		'hu' => 'Magyar',	// IGNORE
@@ -180,6 +186,7 @@ return array(
 		'display' => 'ディスプレイ',
 		'extensions' => '拡張機能',
 		'logs' => 'ログ',
+		'privacy' => 'プライバシー',
 		'queries' => 'ユーザークエリ',
 		'reading' => 'リーディング',
 		'search' => '単語で検索するかハッシュタグで検索する',
@@ -193,16 +200,18 @@ return array(
 		'user_profile' => 'プロフィール',
 	),
 	'period' => array(
-		'days' => '日',
-		'hours' => '時',
-		'months' => '月',
-		'weeks' => '週',
-		'years' => '年',
+		'days' => '日間',
+		'hours' => '時間',
+		'months' => 'ヶ月',
+		'weeks' => '週間',
+		'years' => '年間',
 	),
 	'share' => array(
 		'Known' => 'よく使われるサイト',
+		'archiveIS' => 'archive.is',	// IGNORE
 		'archiveORG' => 'archive.org',	// IGNORE
 		'archivePH' => 'archive.ph',	// IGNORE
+		'bluesky' => 'Bluesky',	// IGNORE
 		'buffer' => 'Buffer',	// IGNORE
 		'clipboard' => 'クリップボード',
 		'diaspora' => 'Diaspora*',	// IGNORE
@@ -224,6 +233,7 @@ return array(
 		'raindrop' => 'Raindrop.io',	// IGNORE
 		'reddit' => 'Reddit',	// IGNORE
 		'shaarli' => 'Shaarli',	// IGNORE
+		'telegram' => 'Telegram',	// IGNORE
 		'twitter' => 'Twitter',	// IGNORE
 		'wallabag' => 'wallabag v1',	// IGNORE
 		'wallabagv2' => 'wallabag v2',	// IGNORE
@@ -237,12 +247,12 @@ return array(
 		'by_author' => '著者:',
 		'by_default' => 'デフォルト',
 		'damn' => '終了!',
-		'default_category' => 'カテゴリーに登録されていない',
-		'no' => 'NO',
+		'default_category' => '未分類',
+		'no' => 'いいえ',
 		'not_applicable' => '利用不可能',
 		'ok' => 'OK!',
 		'or' => 'または',
-		'yes' => 'OK',
+		'yes' => 'はい',
 	),
 	'stream' => array(
 		'load_more' => '記事をもっと読み込む',
