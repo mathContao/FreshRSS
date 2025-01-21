@@ -8,7 +8,7 @@
 
 	<?php if ($this->onlyFeedsWithError) { ?>
 		<a class="btn active" href="<?= _url('subscription', 'index') ?>" title="<?= _t('sub.feed.show.all') ?>"><?= _i('warning') ?></a>
-	<?php } elseif ($this->signalError){ ?>
+	<?php } elseif ($this->signalError) { ?>
 		<a class="btn" href="<?= _url('subscription', 'index', 'error', '1') ?>" title="<?= _t('sub.feed.show.error') ?>"><?= _i('warning') ?></a>
 	<?php
 	}
