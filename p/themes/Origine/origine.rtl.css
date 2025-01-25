@@ -1178,17 +1178,17 @@ a:hover .icon {
 		text-shadow: none;
 	}
 
-	.notification a.close {
+	.notification .close {
 		background-color: transparent;
 		display: block;
 		right: 0;
 	}
 
-	.notification a.close:hover {
+	.notification .close:hover {
 		opacity: 0.5;
 	}
 
-	.notification a.close .icon {
+	.notification .close .icon {
 		display: none;
 	}
 }

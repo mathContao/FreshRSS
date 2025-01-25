@@ -1084,17 +1084,17 @@ a.signin {
 		text-shadow: none;
 	}
 
-	.notification a.close {
+	.notification .close {
 		background: transparent;
 		display: block;
 		left: 0;
 	}
 
-	.notification a.close:hover {
+	.notification .close:hover {
 		opacity: 0.5;
 	}
 
-	.notification a.close .icon {
+	.notification .close .icon {
 		display: none;
 	}
 

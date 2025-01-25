@@ -908,7 +908,7 @@ li.item.active {
 	filter: brightness(60%);
 }
 
-.notification a.close {
+.notification .close {
 	padding: 1.25rem;
 	line-height: 1;
 }
@@ -1313,16 +1313,16 @@ optgroup::before {
 		left: 2%;
 	}
 
-	.notification a.close {
+	.notification .close {
 		display: block;
 		right: 0;
 	}
 
-	.notification a.close:hover {
+	.notification .close:hover {
 		opacity: 0.5;
 	}
 
-	.notification a.close .icon {
+	.notification .close .icon {
 		display: none;
 	}
 

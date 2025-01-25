@@ -511,7 +511,7 @@ button.as-link[disabled] {
 	background-color: var(--dark-background-color1);
 }
 
-.notification a.close:hover {
+.notification .close:hover {
 	background-color: var(--dark-background-color2);
 }
 

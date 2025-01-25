@@ -1749,7 +1749,7 @@ a.website:hover .favicon {
 	visibility: hidden;
 }
 
-.notification a.close {
+.notification .close {
 	padding: 0 1rem;
 	position: absolute;
 	top: 0; bottom: 0;
@@ -1758,11 +1758,11 @@ a.website:hover .favicon {
 	line-height: 3;
 }
 
-.notification a.close:hover {
+.notification .close:hover {
 	background-color: var(--frss-darken-background-hover-transparent);
 }
 
-.notification a.close:hover .icon {
+.notification .close:hover .icon {
 	filter: brightness(2);
 }
 

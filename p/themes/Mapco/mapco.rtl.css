@@ -985,7 +985,7 @@ main.prompt {
 	background: #f5633e;
 	color: #fff;
 }
-.notification a.close {
+.notification .close {
 	border-radius: 3px 0 0 3px;
 }
 .notification.good a.close:hover {
@@ -1322,15 +1322,15 @@ main.prompt {
 	.notification {
 		border-radius: 0;
 	}
-	.notification a.close {
+	.notification .close {
 		background: transparent;
 		display: block;
 		right: 0;
 	}
-	.notification a.close:hover {
+	.notification .close:hover {
 		opacity: 0.5;
 	}
-	.notification a.close .icon {
+	.notification .close .icon {
 		display: none;
 	}
 }
