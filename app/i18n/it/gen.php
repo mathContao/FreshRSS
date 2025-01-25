@@ -16,6 +16,7 @@ return array(
 		'add' => 'Aggiungi',
 		'back_to_rss_feeds' => '← Indietro',
 		'cancel' => 'Annulla',
+		'close' => 'Close',	// TODO
 		'create' => 'Crea',
 		'delete_all_feeds' => 'Cancella tutti i feed',
 		'delete_errored_feeds' => 'Cancella i feed con errori',
