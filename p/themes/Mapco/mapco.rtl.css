@@ -985,13 +985,13 @@ main.prompt {
 	background: #f5633e;
 	color: #fff;
 }
-.notification .close {
-	border-radius: 3px 0 0 3px;
+.notification .close .icon {
+	filter: brightness(3);
 }
-.notification.good a.close:hover {
+.notification.good .close:hover {
 	background: #0c7540;
 }
-.notification.bad a.close:hover {
+.notification.bad .close:hover {
 	background: #73341f;
 }
 .notification#actualizeProgress br {
@@ -1322,15 +1322,15 @@ main.prompt {
 	.notification {
 		border-radius: 0;
 	}
-	.notification .close {
+	.notification a.close {
 		background: transparent;
 		display: block;
 		right: 0;
 	}
-	.notification .close:hover {
+	.notification a.close:hover {
 		opacity: 0.5;
 	}
-	.notification .close .icon {
+	.notification a.close .icon {
 		display: none;
 	}
 }

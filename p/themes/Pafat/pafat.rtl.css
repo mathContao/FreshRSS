@@ -929,12 +929,20 @@ a.signin {
 	border: 1px solid var(--notification-bad-border-color);
 }
 
-.notification.good a.close:hover {
+.notification.good .close:hover {
 	background-color: var(--notification-good-border-color);
 }
 
-.notification.bad a.close:hover {
+.notification.bad .close:hover {
 	background-color: var(--notification-bad-border-color);
+}
+
+.notification .close .icon {
+	filter: brightness(1.5);
+}
+
+.notification .close:hover .icon {
+	filter: brightness(0.5);
 }
 
 /*=== "Load more" part */

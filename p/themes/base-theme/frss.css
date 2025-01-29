@@ -1761,14 +1761,6 @@ a.website:hover .favicon {
 	cursor: pointer;
 }
 
-.notification .close:hover {
-	background-color: var(--frss-darken-background-hover-transparent);
-}
-
-.notification .close:hover .icon {
-	filter: brightness(2);
-}
-
 #actualizeProgress {
 	position: fixed;
 }

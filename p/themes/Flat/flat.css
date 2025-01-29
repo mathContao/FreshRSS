@@ -817,12 +817,20 @@ th {
 	border-radius: 0 3px 3px 0;
 }
 
-.notification.good a.close:hover {
+.notification.good .close:hover {
 	background: #16a085;
 }
 
-.notification.bad a.close:hover {
+.notification .close .icon {
+	filter: brightness(2.5);
+}
+
+.notification.bad .close:hover {
 	background: #c0392b;
+}
+
+.notification .close:hover .icon {
+	filter: brightness(4);
 }
 
 /*=== "Load more" part */

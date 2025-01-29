@@ -1756,14 +1756,9 @@ a.website:hover .favicon {
 	left: 0;
 	display: inline-block;
 	line-height: 3;
-}
-
-.notification .close:hover {
-	background-color: var(--frss-darken-background-hover-transparent);
-}
-
-.notification .close:hover .icon {
-	filter: brightness(2);
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 #actualizeProgress {

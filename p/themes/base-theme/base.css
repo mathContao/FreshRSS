@@ -599,10 +599,10 @@ th {
 .notification.bad {
 }
 
-.notification.good a.close:hover {
+.notification.good .close:hover {
 }
 
-.notification.bad a.close:hover {
+.notification.bad .close:hover {
 }
 
 /*=== "Load more" part */
