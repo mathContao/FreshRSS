@@ -747,6 +747,29 @@ function show_share_menu(el) {
 	return true;
 }
 
+function mylabels(key) {
+	console.log('key pressed: ' + key);
+	const mylabelsDropdown = document.querySelector('.flux.current.active .dropdown-target[id^="dropdown-labels"]');
+	console.log(mylabelsDropdown);
+	if (!mylabelsDropdown) {
+		return;
+	}
+	if (typeof key === 'undefined') {
+		show_labels_menu(mylabelsDropdown);
+	}
+	// Display the mylabels div
+	location.hash = mylabelsDropdown.id;
+	// Force scrolling to the mylabels div
+	const scrollTop = needsScroll(mylabelsDropdown.closest('.horizontal-list'));
+	if (scrollTop !== 0) {
+		if (mylabelsDropdown.closest('.horizontal-list.flux_header')) {
+			mylabelsDropdown.nextElementSibling.nextElementSibling.scrollIntoView({ behavior: "smooth", block: "start" });
+		} else {
+			mylabelsDropdown.nextElementSibling.nextElementSibling.scrollIntoView({ behavior: "smooth", block: "end" });
+		}
+	}
+}
+
 function auto_share(key) {
 	const share = document.querySelector('.flux.current.active .dropdown-target[id^="dropdown-share"]');
 	if (!share) {
@@ -1107,6 +1130,7 @@ function init_shortcuts() {
 		if (k === s.skip_next_entry) { next_entry(true); ev.preventDefault(); return; }
 		if (k === s.skip_prev_entry) { prev_entry(true); ev.preventDefault(); return; }
 		if (k === s.collapse_entry) { collapse_entry(); ev.preventDefault(); return; }
+		if (k === s.mylabels) { mylabels(); ev.preventDefault(); return; }
 		if (k === s.auto_share) { auto_share(); ev.preventDefault(); return; }
 		if (k === s.user_filter) { user_filter(); ev.preventDefault(); return; }
 		if (k === s.load_more) { load_more_posts(); ev.preventDefault(); return; }
