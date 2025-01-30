@@ -748,12 +748,12 @@ function show_share_menu(el) {
 }
 
 function mylabels(key) {
-	console.log('key pressed: ' + key);
 	const mylabelsDropdown = document.querySelector('.flux.current.active .dropdown-target[id^="dropdown-labels"]');
-	console.log(mylabelsDropdown);
+
 	if (!mylabelsDropdown) {
 		return;
 	}
+
 	if (typeof key === 'undefined') {
 		show_labels_menu(mylabelsDropdown);
 	}
@@ -766,6 +766,18 @@ function mylabels(key) {
 			mylabelsDropdown.nextElementSibling.nextElementSibling.scrollIntoView({ behavior: "smooth", block: "start" });
 		} else {
 			mylabelsDropdown.nextElementSibling.nextElementSibling.scrollIntoView({ behavior: "smooth", block: "end" });
+		}
+	}
+
+	key = parseInt(key);
+
+	if (key === 0) {
+		mylabelsDropdown.parentElement.querySelector('.dropdown-menu .item .newTag').focus();
+	} else {
+		const mylabelsCheckboxes = mylabelsDropdown.parentElement.querySelectorAll('.dropdown-menu .item .checkboxTag');
+
+		if (key <= mylabelsCheckboxes.length) {
+			mylabelsCheckboxes[key].click();
 		}
 	}
 }
@@ -1010,11 +1022,19 @@ function init_shortcuts() {
 
 		if (location.hash.match(/^#dropdown-/)) {
 			const n = parseInt(k);
-			if (n) {
-				if (location.hash === '#dropdown-query') {
-					user_filter(n);
-				} else {
-					auto_share(n);
+			if (Number.isInteger(n)) {
+				switch (location.hash.substring(0, 15)) {
+					case '#dropdown-query':
+						user_filter(n);
+						break;
+					case '#dropdown-share':
+						auto_share(n);
+						break;
+					case '#dropdown-label':
+						mylabels(n);
+						break;
+					default:
+						return;
 				}
 				ev.preventDefault();
 				return;
@@ -1455,6 +1475,7 @@ function loadDynamicTags(div) {
 			const input_newTag = document.createElement('input');
 			input_newTag.setAttribute('type', 'text');
 			input_newTag.setAttribute('name', 'newTag');
+			input_newTag.setAttribute('class', 'newTag');
 			input_newTag.setAttribute('list', 'datalist-labels');
 			input_newTag.addEventListener('keydown', function (ev) { if (ev.key.toUpperCase() == 'ENTER') { this.parentNode.previousSibling.click(); } });
 
